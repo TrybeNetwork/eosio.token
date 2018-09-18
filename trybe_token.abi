@@ -1,0 +1,235 @@
+{
+  "version": "eosio::abi/1.0",
+  "types": [{
+      "new_type_name": "time",
+      "type": "uint32"
+    }
+  ],
+  "structs": [{
+      "name": "account",
+      "base": "",
+      "fields": [{
+          "name": "balance",
+          "type": "asset"
+        }
+      ]
+    },{
+      "name": "currency_stat",
+      "base": "",
+      "fields": [{
+          "name": "supply",
+          "type": "asset"
+        },{
+          "name": "max_supply",
+          "type": "asset"
+        },{
+          "name": "issuer",
+          "type": "name"
+        }
+      ]
+    },{
+      "name": "create",
+      "base": "",
+      "fields": []
+    },{
+      "name": "claim",
+      "base": "",
+      "fields": [{
+          "name": "claimer",
+          "type": "name"
+        }
+      ]
+    },{
+      "name": "fndrupdate",
+      "base": "",
+      "fields": [{
+          "name": "founder",
+          "type": "name"
+        }
+      ]
+    },{
+      "name": "issue",
+      "base": "",
+      "fields": [{
+          "name": "to",
+          "type": "name"
+        },{
+          "name": "quantity",
+          "type": "asset"
+        },{
+          "name": "memo",
+          "type": "string"
+        }
+      ]
+    },{
+      "name": "transfer",
+      "base": "",
+      "fields": [{
+          "name": "from",
+          "type": "name"
+        },{
+          "name": "to",
+          "type": "name"
+        },{
+          "name": "quantity",
+          "type": "asset"
+        },{
+          "name": "memo",
+          "type": "string"
+        }
+      ]
+    },{
+      "name": "fndrstake",
+      "base": "",
+      "fields": [{
+          "name": "from",
+          "type": "name"
+        },{
+          "name": "receiver",
+          "type": "name"
+        },{
+          "name": "total_trybe_to_stake",
+          "type": "asset"
+        }
+      ]
+    },{
+      "name": "fndrunstake",
+      "base": "",
+      "fields": [{
+          "name": "from",
+          "type": "name"
+        },{
+          "name": "stake_id",
+          "type": "uint64"
+        }
+      ]
+    },{
+      "name": "staked_trybe",
+      "base": "",
+      "fields": [{
+          "name": "id",
+          "type": "uint64"
+        },{
+          "name": "from",
+          "type": "name"
+        },{
+          "name": "to",
+          "type": "name"
+        },{
+          "name": "trybe_weight",
+          "type": "asset"
+        },{
+          "name": "time_initial",
+          "type": "time"
+        }
+      ]
+    },{
+      "name": "founder_table",
+      "base": "",
+      "fields": [{
+          "name": "account",
+          "type": "name"
+        }
+      ]
+    },{
+      "name": "user_resource",
+      "base": "",
+      "fields": [{
+          "name": "owner",
+          "type": "name"
+        },{
+          "name": "total_staked_trybe",
+          "type": "asset"
+        },{
+          "name": "initial_staked_time",
+          "type": "time"
+        }
+      ]
+    }
+  ],
+  "actions": [{
+      "name": "create",
+      "type": "create",
+      "ricardian_contract": ""
+    },{
+      "name": "claim",
+      "type": "claim",
+      "ricardian_contract": ""
+    },{
+      "name": "fndrupdate",
+      "type": "fndrupdate",
+      "ricardian_contract": ""
+    },{
+      "name": "issue",
+      "type": "issue",
+      "ricardian_contract": ""
+    },{
+      "name": "transfer",
+      "type": "transfer",
+      "ricardian_contract": ""
+    },{
+      "name": "fndrstake",
+      "type": "fndrstake",
+      "ricardian_contract": ""
+    },{
+      "name": "fndrunstake",
+      "type": "fndrunstake",
+      "ricardian_contract": ""
+    }
+  ],
+  "tables": [{
+      "name": "accounts",
+      "index_type": "i64",
+      "key_names": [
+        "balance"
+      ],
+      "key_types": [
+        "asset"
+      ],
+      "type": "account"
+    },{
+      "name": "stat",
+      "index_type": "i64",
+      "key_names": [
+        "supply"
+      ],
+      "key_types": [
+        "asset"
+      ],
+      "type": "currency_stat"
+    },{
+      "name": "stakedtrybe",
+      "index_type": "i64",
+      "key_names": [
+        "id"
+      ],
+      "key_types": [
+        "uint64"
+      ],
+      "type": "staked_trybe"
+    },{
+      "name": "founders",
+      "index_type": "i64",
+      "key_names": [
+        "account"
+      ],
+      "key_types": [
+        "uint64"
+      ],
+      "type": "founder_table"
+    },{
+      "name": "userres",
+      "index_type": "i64",
+      "key_names": [
+        "owner"
+      ],
+      "key_types": [
+        "name"
+      ],
+      "type": "user_resource"
+    }
+  ],
+  "ricardian_clauses": [],
+  "error_messages": [],
+  "abi_extensions": []
+}

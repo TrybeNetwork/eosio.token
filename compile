@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ eosiocpp -o eosio.token.wast eosio.token.cpp
+ eosiocpp -g eosio.token.abi eosio.token.cpp
